@@ -1,0 +1,14 @@
+<button
+  *ngIf="page > 1"
+  class="btn btn-primary"
+  (click)="onPageChange(page - 1)"
+>
+  Previous
+</button>
+<button
+  *ngIf="page * pageSize <= collectionSize"
+  class="btn btn-primary"
+  (click)="onPageChange(page + 1)"
+>
+  Next
+</button>

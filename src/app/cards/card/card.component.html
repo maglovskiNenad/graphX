@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="col-3">
+    <img src="{{ card.image }}" width="100%" />
+  </div>
+  <div class="col-9">
+    <a [routerLink]="[card._id, 'comments']">{{ card.title }}</a>
+    <small>{{ card.subtitle }}</small>
+    <div class="row">
+      <app-show-more
+        [text]="card.description"
+        [textLength]="130"
+      ></app-show-more>
+    </div>
+    <span class="float-right">
+      <button class="btn btn-success" (click)="onGradeChange(card.grade + 1)">
+        +
+      </button>
+      {{ card.grade }}
+      <button class="btn btn-danger" (click)="onGradeChange(card.grade - 1)">
+        -
+      </button>
+    </span>
+  </div>
+</div>
